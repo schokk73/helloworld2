@@ -1,0 +1,40 @@
+/* General Paragraph Styling*/
+p {
+    color: black;
+    font-size: 1.5em;
+
+}
+
+/* Level 2 headers*/
+h2 {
+    color: blue;
+    font-size: 3em;
+    font-family: Arial, serif;
+}
+
+/* Table Borders*/
+table, td, th {
+    border-style: solid;
+    border-width: 2px;
+    border-color: crimson;
+    border-collapse: collapse;
+}
+
+/* Special Paragraph */
+#special-CSS-Paragraph {
+    color: darkturquoise;
+    font-weight: bold;
+}
+
+/* Highlight Class */
+.highlight {
+    background-color: yellow;
+    padding: 2px 4px;
+    border-radius: 4px;
+}
+
+/* Image settings */
+img.logo {
+    width:221px;
+    height:92px;
+}
