@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Greeting Website</title>
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="../bootstrap-5.3.8-dist/css/bootstrap.min.css">
+</head>
+<body>
+<p>
+    <h1> Hello There!</h1>
+    <!-- Form to display greeting -->
+    <form onsubmit="return displayGreeting()">
+        <label for="nameInput">Enter your name:</label>
+        <input type="text" id="nameInput" placeholder="Your name" required>
+        <button type="submit">Submit</button>
+    </form>
+    <!-- Empty paragraph for greeting -->
+    <p id="greetingMessage"></p>
+
+    <h2>Cuisines and Classes</h2>
+    <!-- Paragraph 1 about Favorite Foods, which can then be switched into a paragraph about a paragraph about courses -->
+    <p id="foodParagraph"> I am a big food lover, an avid cuisine enjoyer, a culinary appreciator. Long story short, I love trying new foods from different cuisines and cultures from all over the world. Not only is it tasty and delicious, but it's also a great way to learn more about different cultures and their customs. My favorite type of cuisine at the moment is Mexican. Ranging from Chipotle bowls to hot enchiladas, I love the different spices and flavors used in Mexican food, providing me with a great eating experience. My second favorite type of cuisine is Indian. As someone who grew up eating Indian food, this cuisine is comfort food for me and reminds me of home. My third favorite type of cuisine would probably be Thai food. A hot plate of Pad Thai on a cold day would not only dazzle me with its spice and savoriness, but also fill me up with warmth and content. I've listed a couple of my favorite foods below. Thanks for reading, and I hope that you also become an avid food lover! Click the New Info button to switch topics and learn about my coursework.</p>
+    <!-- Button to trigger the change -->
+    <button onclick="toggleTextAndStyle()"> New Info</button>
+
+    <h2>My Favorite Foods</h2>
+    <!-- Empty container for list of food -->
+    <ul id="foodList"></ul>
+
+    <h2>Select Courses You Have Taken</h2>
+    <form onsubmit="return showCourses()">
+    <label><input type="checkbox" name="courses" value="ENAE202"> ENAE202</label><br>
+    <label><input type="checkbox" name="courses" value="ENES100"> ENES100</label><br>
+    <label><input type="checkbox" name="courses" value="ENES102"> ENES102</label><br>
+    <label><input type="checkbox" name="courses" value="ENES200"> ENES200</label><br>
+    <label><input type="checkbox" name="courses" value="ENES220"> ENES220</label><br>
+    <label><input type="checkbox" name="courses" value="MATH241"> MATH241</label><br>
+    <label><input type="checkbox" name="courses" value="PHYS270"> PHYS270</label><br><br>
+
+    <button type="submit">Submit</button>
+  </form>
+
+<!-- Toast Container -->
+<div class="toast-container position-fixed bottom-0 end-0 p-3" style="z-index: 1100;">
+  <div id="greetingToast" class="toast text-bg-primary border-0" role="alert" aria-live="assertive" aria-atomic="true">
+    <div class="d-flex">
+      <div class="toast-body" id="toastMessage">
+        <!-- Toast message will be inserted here -->
+      </div>
+      <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast" aria-label="Close"></button>
+    </div>
+  </div>
+</div>
+
+<script src= "/static/js/main.js"></script>
+<script src="../bootstrap-5.3.8-dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
