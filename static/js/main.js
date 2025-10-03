@@ -23,18 +23,21 @@ function displayGreeting() {
     return false;
 }
 
-function showGreetingToast() {
-  // Get toast element and message container
+// Call this from your form submit or click handlers
+function showGreetingToast(name = "") {
   const toastEl = document.getElementById('greetingToast');
   const toastBody = document.getElementById('toastMessage');
 
-  // Set the message dynamically
-  toastBody.textContent = "Hello again! 👋 Hope you're having a great day!";
+  // Optional personalized message
+  toastBody.textContent = name
+    ? `Hello again, ${name}! 👋`
+    : "Hello again! 👋";
 
-  // Create Bootstrap toast instance
-  const toast = new bootstrap.Toast(toastEl);
+  // If bootstrap isn't loaded, this will be undefined
+  // so this line is a good sanity check while debugging:
+  // console.log('bootstrap is', typeof bootstrap);
 
-  // Show it!
+  const toast = bootstrap.Toast.getOrCreateInstance(toastEl);
   toast.show();
 }
 // Toggle Function

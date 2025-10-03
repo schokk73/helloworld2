@@ -43,6 +43,25 @@
     <button type="submit">Submit</button>
   </form>
 
+<!-- test button so you can verify the toast shows -->
+  <button class="btn btn-primary" onclick="showGreetingToast('Tester')">
+    Test Toast
+  </button>
+ <!-- Toast container fixed in bottom-right -->
+  <div class="toast-container position-fixed bottom-0 end-0 p-3" style="z-index:1100;">
+    <div id="greetingToast"
+         class="toast text-bg-primary border-0"
+         role="alert" aria-live="assertive" aria-atomic="true"
+         data-bs-delay="3000">
+      <div class="d-flex">
+        <div class="toast-body" id="toastMessage">
+          <!-- message set by JS -->
+        </div>
+        <button type="button" class="btn-close btn-close-white me-2 m-auto"
+                data-bs-dismiss="toast" aria-label="Close"></button>
+      </div>
+    </div>
+  </div>
 <!-- Toast Container -->
 <div class="toast-container position-fixed bottom-0 end-0 p-3" style="z-index: 1100;">
   <div id="greetingToast" class="toast text-bg-primary border-0" role="alert" aria-live="assertive" aria-atomic="true">
@@ -54,6 +73,14 @@
     </div>
   </div>
 </div>
+<section class="container mt-5">
+    <h2>Why I Chose This Component</h2>
+    <p>
+      I chose the Bootstrap <strong>Collapse</strong> component because it allows me to show or hide
+      extra content without taking up extra space. This makes the page cleaner and easier to navigate,
+      enhancing the user experience by letting visitors reveal more information only when they want it.
+    </p>
+  </section>
 
 <script src= "/static/js/main.js"></script>
 <script src="../bootstrap-5.3.8-dist/js/bootstrap.bundle.min.js"></script>
