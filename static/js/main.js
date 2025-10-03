@@ -32,12 +32,16 @@ function showGreetingToast(name = "") {
   toastBody.textContent = name
     ? `Hello again, ${name}! 👋`
     : "Hello again! 👋";
+// Dispose any previous instance so new options take effect
+  let toast = bootstrap.Toast.getInstance(toastEl);
+  if (toast) toast.dispose();
 
-  // If bootstrap isn't loaded, this will be undefined
-  // so this line is a good sanity check while debugging:
-  // console.log('bootstrap is', typeof bootstrap);
+  // Create with explicit options
+  toast = new bootstrap.Toast(toastEl, {
+    autohide: true,
+    delay: 3000   // 3 seconds
+  });
 
-  const toast = bootstrap.Toast.getOrCreateInstance(toastEl);
   toast.show();
 }
 // Toggle Function
