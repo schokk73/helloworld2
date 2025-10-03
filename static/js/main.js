@@ -11,7 +11,7 @@ function displayGreeting() {
         message.textContent = `Hello, ${name} !`;
         message.style.fontSize = "20px";
         message.style.color = "black";
-        showGreetingToast()
+        showGreetingToast(name);
     } else {
         message.textContent = "Please enter your name!!"
         message.style.color = "red";
