@@ -17,6 +17,7 @@ function displayGreeting() {
         message.style.color = "red";
     }
 
+    setTimeout(() => message.textContent = "", 10000); // stays 10 seconds
     // Clear input field
     nameInput.value = "";
 
