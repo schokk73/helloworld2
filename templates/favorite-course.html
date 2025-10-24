@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+
+{% block title %}Favorite Course{% endblock %}
+
+{% block content %}
+    <h2 class="mb-3">Favorite Course</h2>
+    <p> Tell us what your favorite course is! </p>
+{% set has_course = (subject != None) and (course_number != None) %}
+
+
+  {% if has_course %}
+    <p>You entered your favorite course as: {{ subject }} {{ course_number }}</p>
+    <a class="btn btn-dark" href="{{ url_for('favorite_course') }}">Click here to change your favorite course.</a>
+  {% else %}
+      <p>No course was provided. Enter one below!</p>
+      <form class="input-group input-group-sm" method="GET" action="{{ url_for('favorite_course') }}">
+      <span class="input-group-text">Subject (eg. ENAE)</span>
+      <input type="text" name="subject"><br>
+      <span class="input-group-text">Course Number (eg. 283)</span>
+      <input type="text" name="course_number">
+      <button class="btn btn-primary" type="submit">Here's my favorite course!</button>
+      </form>
+  {% endif %}
+
+{% endblock %}

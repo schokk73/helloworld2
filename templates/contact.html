@@ -1,0 +1,43 @@
+{% extends "base.html" %}
+
+{% block title %}Contact{% endblock %}
+
+{% block content %}
+
+{% if submitted %}
+  <h3>Thank you for contacting us!</h3>
+  <p><strong>First Name:</strong> {{ first }}</p>
+  <p><strong>Last Name:</strong> {{ last }}</p>
+  <p><strong>Email:</strong> {{ email }}</p>
+  <p><strong>Your Major:</strong> {{ major }}</p>
+  <a class="btn btn-secondary" href="{{ url_for('contact') }}">Click here to edit your contact info.</a>
+
+{% else %}
+  <h2 class="mb-3">Contact Us</h2>
+  <p>Fill out the form below so we can contact you later!</p>
+    <form method="POST" class="w-50">
+    <div class="mb-3">
+      <label class="form-label">First Name</label>
+      <input class="form-control" name="first_name" required>
+    </div>
+
+    <div class="mb-3">
+      <label class="form-label">Last Name</label>
+      <input class="form-control" name="last_name" required>
+    </div>
+
+    <div class="mb-3">
+      <label class="form-label">Email</label>
+      <input type="email" class="form-control" name="email" required>
+    </div>
+
+    <div class="mb-3">
+      <label class="form-label">Major</label>
+      <textarea class="form-control" name="major" rows="3"></textarea>
+    </div>
+
+    <button class="btn btn-primary" type="submit">Submit</button>
+  </form>
+{% endif %}
+
+{% endblock %}
