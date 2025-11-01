@@ -52,7 +52,7 @@ def student_create():
         birth_date = request.form['birth_date']
         is_honors = True if 'is_honors' in request.form else False
 
-        student = Student(first_name=first_name, last_name=last_name, major_id=major_id,
+        student = Student(first_name=first_name, last_name=last_name, email=email, major_id=major_id,
                           birth_date=dt.strptime(birth_date, '%Y-%m-%d'), is_honors=is_honors)
         db.session.add(student)
         db.session.commit()
