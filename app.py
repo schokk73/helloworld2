@@ -210,9 +210,6 @@ def student_delete(student_id):
 @login_required
 @role_required(['ADMIN', 'MANAGER'])
 def training():
-    if current_user.role != (['ADMIN', 'MANAGER']):
-        return redirect(url_for('error'))
-    else:
         return render_template('training.html')
 
 
